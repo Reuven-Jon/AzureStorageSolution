@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Download or Delete Media";
+}
+
+<h2>Download or Delete Media</h2>
+
+<form asp-action="DownloadMedia" asp-controller="Media" method="get">
+    <div>
+        <label>Enter file name to download:</label>
+        <input type="text" name="fileName" />
+    </div>
+    <div>
+        <input type="submit" value="Download" />
+    </div>
+</form>
+
+<form asp-action="DeleteMedia" asp-controller="Media" method="post">
+    <div>
+        <label>Enter file name to delete:</label>
+        <input type="text" name="fileName" />
+    </div>
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div>
+        <p>@ViewBag.Message</p>
+        </div>
+    }
+}

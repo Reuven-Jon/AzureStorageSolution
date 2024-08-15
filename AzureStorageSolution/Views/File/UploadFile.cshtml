@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Upload File";
+}
+
+<h2>Upload File</h2>
+
+<form asp-action="UploadFile" asp-controller="File" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Select file to upload:</label>
+        <input type="file" name="file" />
+    </div>
+    <div>
+        <label>Directory Name:</label>
+        <input type="text" name="directoryName" />
+    </div>
+    <div>
+        <input type="submit" value="Upload" />
+    </div>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div>
+        <p>@ViewBag.Message</p>
+        <a href="@ViewBag.Url" target="_blank">View Uploaded File</a>
+    </div>
+}
